@@ -9,7 +9,6 @@ y = pd.read_csv('../data/AirPassengers.csv')
 y.columns = ['ds', 'y']
 
 may_1960_index = 136
-july_1960_index = 138
 
 # Plot the timeseries and mark the test period
 labels = np.arange(49,61)
@@ -41,9 +40,9 @@ print("The Facebbook Prophet RMSE for may 1960 (blue circle) is:", RMSE_May_FBP)
 forecast_new = forecast['yhat'].copy()
 
 # Plot the forecasts
-y_p = y['y'][120:]
-forcast_p = forecast['yhat'][120:]
-forecast_new_p = forecast_new[120:]
+y_p = y['y'][120:137]
+forcast_p = forecast['yhat'][120:137]
+forecast_new_p = forecast_new[120:137]
 
 labels = [59, 60]
 xt = np.arange(120, 133, 12)
@@ -96,9 +95,9 @@ RMSE_May_Max_Ent = np.sqrt(np.square(forecast_new[may_1960_index]-y['y'][may_196
 print("The Maximium Entropy RMSE for may 1960 is:", RMSE_May_Max_Ent)
 
 # Plot the forecasts
-y_p = y['y'][120:]
-forcast_p = forecast['yhat'][120:]
-forecast_new_p = forecast_new[120:]
+y_p = y['y'][120:137]
+forcast_p = forecast['yhat'][120:137]
+forecast_new_p = forecast_new[120:137]
 
 labels = [59, 60]
 xt = np.arange(120, 133, 12)
